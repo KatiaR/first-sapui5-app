@@ -25,9 +25,7 @@ sap.ui.define([
 			// set dialog
 			this._helloDialog = new HelloDialog(this.getRootControl());
 			
-			var myModel = new JSONModel();
-			myModel.loadData("Invoices.json");
-			this.setModel(myModel,"invoice");
+		
 		},
 
 
