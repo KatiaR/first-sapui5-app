@@ -6,9 +6,9 @@ sap.ui.define([
 
 	return {
 		init: function () {
-			// create
+			// createfirst-sapui5-app
 			var oMockServer = new MockServer({
-				rootUri: "https://services.odata.org/V2/Northwind/Northwind.svc/"
+				rootUri: "/services.odata.org/V2/Northwind/Northwind.svc/"
 			});
 
 			var oUriParameters = new UriParameters(window.location.href);
@@ -20,8 +20,8 @@ sap.ui.define([
 			});
 
 			// simulate
-			var sPath = "../localService/";
-			oMockServer.simulate(sPath + "/metadata.xml", sPath + "/mockdata");
+			var sPath =  "../localService/";
+			oMockServer.simulate(sPath + "/metadata.xml", sPath + "/mockda");
 
 			// start
 			oMockServer.start();
