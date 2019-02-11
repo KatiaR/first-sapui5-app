@@ -75,13 +75,13 @@
 		  "target": "overview"
 		},
 		{
-		  "pattern": "detail",
+		  "pattern": "detail/{invoicePath}",
 		  "name": "detail",
 		  "target": "detail"
 		}
 	  ],
-	  "targets": {
-		"overview": {
+		  "targets": {
+		   "overview": {
 		  "viewID": "overview",
 		  "viewName": "Overview"
 		},

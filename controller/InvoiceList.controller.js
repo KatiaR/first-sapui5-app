@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"../model/formatter",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function (Controller, JSONModel, formatter, Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/ui/core/UIComponent"
+], function (Controller, JSONModel, formatter, Filter, FilterOperator, UIComponent) {
 	"use strict";
 	return Controller.extend("sap.ui.demo.walkthrough.controller.InvoiceList", {
 		formatter: formatter, 
@@ -29,11 +30,11 @@ sap.ui.define([
 			oBinding.filter(aFilter);
 		},
 		
-	    onPress: function (oEvent) {
+	onPress: function (oEvent) {
 			var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail", {
-				invoicePath: oItem.getBindingContext("invoice").getPath().substr(1)
+				invoicePath: encodeURIComponent(oItem.getBindingContext("invoice").getPath().substr(1))
 			});
 		}
 	});
